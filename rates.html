@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="author" content="Danielle Jenson" />
-    <meta
-      name="description"
-      content="Rates for private sewing lessons."
-    />
+    <meta name="description" content="Rates for private sewing lessons." />
 
     <title>How 2 Sew Rates</title>
     <link rel="icon" href="img/pincushion.png" />
@@ -32,7 +29,7 @@
 
       <nav aria-label="primary-navigation">
         <ul>
-         <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="Contact-me.html">Contact</a></li>
           <li><a href="myProjects.html">My Projects</a></li>
@@ -41,10 +38,107 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section class="main__child">
+        <h3>Private Lesson Rates</h3>
+        <table>
+          <caption>
+            Lesson Rates
+          </caption>
+          <thead>
+            <tr>
+              <th>Type of Class/Rental</th>
+              <th>Hourly Cost</th>
+              <th>Minimum Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In Home Lesson</td>
+              <td>$30.00</td>
+              <td>2 Hours</td>
+            </tr>
+            <tr>
+              <td>Virtual Lesson</td>
+              <td>$30.00</td>
+              <td>1 Hour</td>
+            </tr>
+            <tr>
+              <td>Gatineau Library Lesson</td>
+              <td>$30.00</td>
+              <td>1 Hour</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <div>
+          <ul>
+            Available Rentals:
+          </ul>
+          <li>Sewing Machine: $5/hour</li>
+          <li>Serger/Overlocker $17/hour</li>
+        </div>
+      </section>
+
+      <form action="js/calculate.js" method="post">
+        <select name="lessonType" id="lessonType" class="form-opt">
+          <option value="" disabled selected>Preferred Location</option>
+          <option value="hours2">At Client Home</option>
+          <option value="hours1">Virtual Lesson</option>
+          <option value="hours0">Gatineau Library Lesson</option>
+        </select>
+        <br />
+        <input
+          type="checkbox"
+          id="machine"
+          name="machine"
+          class="form-opt"
+          value="5"
+        />
+        <label for="machine" class="form-label">Sewing Machine Rental</label>
+        <input
+          type="checkbox"
+          id="serger"
+          name="serger"
+          class="form-opt"
+          value="15"
+        />
+        <label for="machine" class="form-label">Serger Rental</label>
+        <br />
+
+        <label for="hours" id="form__hours1_label"
+          >Lesson Length
+        </label>
+        <select id="hours1" name="hours1" class="form-opt form__1min">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <select id="hours2" name="hours2" class="form-opt form__2min">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <select id="hours0" name="hours0" class="form-opt form__2max">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+
+        <label>hours</label>
+
+        <h4>Total Cost:</h4>
+        <p id="cost"></p>
+      </form>
+    </main>
     <footer>
       <div id="copyright">Copyright &copy; CurrentCopyrightYear</div>
     </footer>
   </body>
   <script src="js/script.js"></script>
+  <script src="js/calculate.js"></script>
 </html>

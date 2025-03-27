@@ -19,7 +19,9 @@ img {
 
 input,
 button,
-textarea {
+textarea,
+form,
+select {
   font: inherit;
 }
 
@@ -157,6 +159,11 @@ h3 {
   padding-bottom: 0.5em;
   font-size: 1.75rem;
 }
+h4 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1.15rem;
+}
 
 footer {
   background-color: var(--MED);
@@ -166,10 +173,12 @@ footer {
 }
 
 /* || MAIN */
-.main__intro,
-.main__classes,
-.main__featPhoto {
+.main__child {
   padding: var(--PADDING-TB) var(--PADDING-RL);
+}
+
+.main__classes {
+  padding-bottom: 1rem;
 }
 .main__intro {
   background-color: var(--POP);
@@ -213,4 +222,35 @@ a.button {
   color: var(--ACCENT);
   background-color: var(--DARK);
   text-decoration: none;
+}
+
+
+.form-label {
+  padding-left: 0.25em;
+  padding-right: 2em;
+}
+
+.form-opt {
+  margin: 0.5rem;
+}
+
+form {
+  background: var(--HIGHLIGHT);
+  border-left: var(--BORDERS);
+  border-right: var(--BORDERS);
+  box-shadow: 0 0 10px var(--BORDER-COLOR);
+  padding: 1.5em;
+  margin: 2em;
+  margin-right:6em;
+  margin-left: 6em;
+}
+
+.form__1min[disabled],
+.form__2min[disabled],
+.form__2max[disabled] {
+  display: none;
+}
+
+#cost{
+  font-size: 2rem;
 }
