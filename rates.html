@@ -39,7 +39,7 @@
       </nav>
     </header>
     <main>
-      <section class="main__child">
+      <section class="main__child main__rates">
         <h3>Private Lesson Rates</h3>
         <table>
           <caption>
@@ -66,7 +66,7 @@
             <tr>
               <td>Gatineau Library Lesson</td>
               <td>$30.00</td>
-              <td>1 Hour</td>
+              <td>1 Hour*</td>
             </tr>
           </tbody>
         </table>
@@ -78,61 +78,85 @@
           <li>Sewing Machine: $5/hour</li>
           <li>Serger/Overlocker $17/hour</li>
         </div>
+        <p class="bottom-capt">*Gatineau has max booking time of 2 hours.</p>
       </section>
 
-      <form action="js/calculate.js" method="post">
-        <select name="lessonType" id="lessonType" class="form-opt">
-          <option value="" disabled selected>Preferred Location</option>
-          <option value="hours2">At Client Home</option>
-          <option value="hours1">Virtual Lesson</option>
-          <option value="hours0">Gatineau Library Lesson</option>
-        </select>
-        <br />
-        <input
-          type="checkbox"
-          id="machine"
-          name="machine"
-          class="form-opt"
-          value="5"
-        />
-        <label for="machine" class="form-label">Sewing Machine Rental</label>
-        <input
-          type="checkbox"
-          id="serger"
-          name="serger"
-          class="form-opt"
-          value="15"
-        />
-        <label for="machine" class="form-label">Serger Rental</label>
-        <br />
+      <form action="js/calculate.js">
+        <h4 id="form__heading">Let's Calculate it Together!</h4>
 
-        <label for="hours" id="form__hours1_label"
-          >Lesson Length
-        </label>
-        <select id="hours1" name="hours1" class="form-opt form__1min">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <div class="form__section">
+          <select name="lessonType" id="lessonType" class="form-opt">
+            <option value="" disabled selected>Preferred Location</option>
+            <option value="hours2">At Client Home</option>
+            <option value="hours1">Virtual Lesson</option>
+            <option value="hours0">Gatineau Library Lesson</option>
+          </select>
+          <br />
+          <input
+            type="checkbox"
+            id="machine"
+            name="machine"
+            class="form-opt"
+            value="5"
+            disabled
+          />
+          <label for="machine" class="form-label">Sewing Machine Rental</label>
+          <br />
+          <input
+            type="checkbox"
+            id="serger"
+            name="serger"
+            class="form-opt"
+            value="15"
+            disabled
+          />
+          <label for="serger" class="form-label">Serger Rental</label>
+          <br />
 
-        <select id="hours2" name="hours2" class="form-opt form__2min">
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+          <label for="hours" id="form__hours1_label">Lesson Length </label>
+          <select
+            id="hours1"
+            name="hours1"
+            class="form-opt form__1min"
+            disabled
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
 
-        <select id="hours0" name="hours0" class="form-opt form__2max">
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
+          <select
+            id="hours2"
+            name="hours2"
+            class="form-opt form__2min"
+            disabled
+          >
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
 
-        <label>hours</label>
-
-        <h4>Total Cost:</h4>
-        <p id="cost"></p>
+          <select
+            id="hours0"
+            name="hours0"
+            class="form-opt form__2max"
+            disabled
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+          <label>hours</label>
+        </div>
+        <div class="form__section">
+          <h4 class="nowrap">Total Cost Per Session:</h4>
+          <p id="cost"></p>
+        </div>
+        <div id="form__foot">
+          <input type="reset" id="form__button" />
+        </div>
       </form>
     </main>
     <footer>

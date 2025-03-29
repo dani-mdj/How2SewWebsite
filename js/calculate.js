@@ -5,9 +5,12 @@ const hours = document.querySelector("[name=hours1]");
 const hours2 = document.querySelector("[name=hours2]");
 const hours0 = document.querySelector("[name=hours0]");
 const cost = document.querySelector("[id=cost]");
+const button = document.querySelector("[id=form__button]");
 
 function updateForm() {
   if (locType.value === "hours1") {
+    machineRental.checked = false;
+    sergerRental.checked = false;
     document.getElementById("hours2").setAttribute("disabled", true);
     document.getElementById("hours1").removeAttribute("disabled");
     document.getElementById("machine").setAttribute("disabled", true);
@@ -37,7 +40,7 @@ function updateTotal() {
   } else if (locType.value === "hours1") {
     rentTime = hours.value;
     price += rentTime * 30;
-  } else {
+  } else if (locType.value === "hours0") {
     rentTime = hours0.value;
     price += rentTime * 30;
   }
@@ -50,6 +53,10 @@ function updateTotal() {
   cost.innerText = "$" + price;
 }
 
+function clearForm() {
+  cost.innerText = "";
+}
+
 locType.addEventListener("change", updateForm);
 hours.addEventListener("change", updateTotal);
 hours2.addEventListener("change", updateTotal);
@@ -57,3 +64,4 @@ sergerRental.addEventListener("change", updateTotal);
 machineRental.addEventListener("change", updateTotal);
 locType.addEventListener("change", updateTotal);
 hours0.addEventListener("change", updateTotal);
+button.addEventListener("click", clearForm);
