@@ -146,7 +146,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1rem, 2.5vw, 3rem);
+  font-size: clamp(1rem, 4vw, 2rem);
   position: absolute;
   left: 50%;
   top: 85%;
@@ -197,9 +197,18 @@ footer {
 }
 .main__more {
   display: grid;
-  grid-template: "div div div div div ";
+  grid-template: "b1 b2";
   background-color: var(--ACCENT);
-  padding: 5%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  grid-gap: 2rem;
+  justify-content: center;
+}
+.b1 {
+  grid-area: b1;
+}
+.b2 {
+  grid-area: b2;
 }
 
 .main__rates {
@@ -256,6 +265,32 @@ footer {
 .bq {
   grid-area: bq;
   font-size: 2rem;
+}
+.bq p {
+  text-align: right;
+  text-shadow: 2px 2px 4px #aca8a8;
+  color: var(--DARK);
+}
+
+/* project display */
+.project-container {
+  justify-items: center;
+
+  .img-slides {
+    max-height: 600px;
+    margin: 1rem;
+    border-radius: 40px;
+    box-shadow: 2px 2px 20px 0px var(--MED);
+  }
+}
+.slide-button {
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
+  color: var(--LIGHT-TEXT);
+  background-color: var(--MED);
+  border-radius: 6px;
 }
 
 table,
@@ -348,7 +383,7 @@ form {
   display: inline-block;
   font-size: 1.15rem;
   line-height: 23px;
-  padding: 8vw;
+  padding: clamp(2rem, 10vw, 5rem);
   transition: all 235ms ease-in-out;
   border-bottom-left-radius: 15px 255px;
   border-bottom-right-radius: 225px 15px;
@@ -373,7 +408,7 @@ form {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 12vw;
   }
   h2 {
     display: none;
@@ -399,14 +434,17 @@ form {
   }
 
   .main__more {
-    display: grid;
-    grid-template-areas:
-      "div"
-      "div";
-    padding-bottom: 15%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    display: block;
+    justify-items: center;
   }
   .button-55 {
-    margin: 5%;
+    margin-bottom: 1rem;
+    padding: 1.75rem;
+  }
+  .main__about {
+    display: block;
   }
 }
 
